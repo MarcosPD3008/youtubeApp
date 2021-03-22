@@ -1,5 +1,5 @@
-<div class="container">
-    <h1 class="text-center text-danger">Videos de Youtube</h1><hr>
+<div class="main-container"> 
+    <h1 class="text-center text-danger">Videos del canal: VisualPolitik</h1><hr>
 
     <div class="card-columns">
         <div class="card animated fadeIn fast" *ngFor="let video of Videos">
@@ -13,7 +13,6 @@
         </div>
     </div>
     <button class="btn btn-outline-danger btn-block" (click)="CargarMas()">Mostrar mas...</button>
-
 </div>
 
 <!-- Modal -->
@@ -22,13 +21,13 @@
     <div class="modal-dialog">
       <div class="modal-content" *ngIf="SelectedVideo != null">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">{{ SelectedVideo.title }}</h5>
+          <h5 class="modal-title text-danger text-center" id="exampleModalLabel">{{ SelectedVideo.title }}</h5>
         </div>
         <div class="modal-body">
             <iframe width="100%" height="300" [src]="SelectedVideo.resourceId.videoId |videoYt" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" (click)="CerrarModal()">Cerrar</button>
+          <button type="button" class="btn btn-danger" (click)="CerrarModal()">Cerrar</button>
         </div>
       </div>
     </div>

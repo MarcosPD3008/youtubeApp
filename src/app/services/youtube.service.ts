@@ -34,6 +34,7 @@ export class YoutubeService {
           Videos.push(snippet)
       }
 
+      console.log(res.json())  
       return Videos
     })
   }
