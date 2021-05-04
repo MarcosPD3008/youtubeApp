@@ -12,6 +12,9 @@ export class HomeComponent implements OnInit {
   Videos:any[] = []
   SelectedVideo:any;
 
+  IdList:string = "";
+  Error:boolean = false;
+
   constructor(public ys:YoutubeService) {
     this.ys.GetVideos().subscribe(videos =>{
       this.Videos = videos;
@@ -35,5 +38,20 @@ export class HomeComponent implements OnInit {
     this.ys.GetVideos().subscribe(videos =>{
       this.Videos.push.apply(this.Videos, videos);
     })
+  }
+
+  Cambiar(){
+    this.ys.GetVideos(this.IdList.trim()).subscribe(videos =>{
+      this.Videos = videos;
+      this.Error = false;
+    }, 
+    () =>{
+      this.Videos = [];
+      this.Error = true;
+    })
+  }
+
+  info(){
+    $('#Modal2').modal()
   }
 }

@@ -9,6 +9,9 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HttpModule } from "@angular/http";
 import { VideoYtPipe } from './pipes/video-yt.pipe';
 import { NoImagePipe } from './pipes/no-image.pipe';
+import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,9 @@ import { NoImagePipe } from './pipes/no-image.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     YoutubeService
